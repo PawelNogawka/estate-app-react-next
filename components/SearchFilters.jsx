@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { filterData, getFilterValues } from "../utils/filterData";
 
 const SearchFilters = (filterValues) => {
-  const [filters] = useState(filterData);
+  const [filters,setFilters] = useState(filterData);
   const router = useRouter();
   const searchProperties = (filterValues) => {
     const path = router.pathname;
@@ -18,7 +18,6 @@ const SearchFilters = (filterValues) => {
     });
 
     router.push({ pathname: path, query: query });
-    console.log(query);
   };
 
   return (

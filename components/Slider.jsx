@@ -53,8 +53,8 @@ const Slider = ({ photos }) => {
           onMouseLeave={handleOnMounseLeave}
           onMouseMove={handleOnMouseMove}
         >
-          {photos.map((photo) => (
-            <SliderItem  src={photo.url} title={photo.title} key={photos.id} />
+          {photos.map((photo,index) => (
+            <SliderItem  src={photo.url} title={photo.title} key={index} />
           ))}
         </div>
       </div>

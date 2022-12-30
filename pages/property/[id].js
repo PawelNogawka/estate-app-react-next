@@ -29,7 +29,6 @@ const PropertyDetails = ({ propertyDetails }) => {
   } = propertyDetails;
 
   const style = { color: "#4f4a70", fontSize: "2.8rem" };
-  console.log(price);
   return (
     <section className="property-details section-padding">
       {photos && <Slider photos={photos} />}
@@ -49,6 +48,7 @@ const PropertyDetails = ({ propertyDetails }) => {
               src={agency.logo.url}
               width={120}
               height={85}
+              alt='logo'
             />
           </div>
         </div>
