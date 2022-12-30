@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputBox from "../components/InputBox";
+import { v4 as uuidv4 } from "uuid";
 const Contact = () => {
   const [values, setValues] = useState({
     name: "",
@@ -86,7 +87,7 @@ const Contact = () => {
         <div className="form__inputs-container">
           {elements.map((element) => (
             <InputBox
-              key={element.id}
+              key={uuidv4()}
               element={element}
               onChange={onChange}
               value={values[element.name]}

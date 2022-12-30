@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import { useRouter } from "next/router";
 
 import SearchFilters from "../components/SearchFilters";
@@ -10,7 +10,7 @@ import Image from "next/image";
 import { BsFilter } from "react-icons/bs";
 import NoFound from "../asstes/no-found.jpg";
 
-const search = ({ properties }) => {
+const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
   return (
@@ -67,4 +67,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default search;
+export default Search;

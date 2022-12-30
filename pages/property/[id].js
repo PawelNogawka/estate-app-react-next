@@ -10,6 +10,8 @@ import { RiHome2Fill } from "react-icons/ri";
 import { MdVerifiedUser } from "react-icons/md";
 import Image from "next/image";
 
+import { v4 as uuidv4 } from "uuid";
+
 const PropertyDetails = ({ propertyDetails }) => {
   const {
     price,
@@ -86,7 +88,7 @@ const PropertyDetails = ({ propertyDetails }) => {
       </div>
       <div className="details__amentities">
         {amenities.map((item) => (
-          <div className="deatails__amentities-item">{item.text}</div>
+          <div key={uuidv4()}  className="deatails__amentities-item">{item.text}</div>
         ))}
       </div>
     </section>

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { filterData, getFilterValues } from "../utils/filterData";
 
+import { v4 as uuidv4 } from "uuid";
+
 const SearchFilters = (filterValues) => {
-  const [filters,setFilters] = useState(filterData);
+  const [filters, setFilters] = useState(filterData);
   const router = useRouter();
+
   const searchProperties = (filterValues) => {
+    
     const path = router.pathname;
     const { query } = router;
 
@@ -28,13 +32,17 @@ const SearchFilters = (filterValues) => {
             searchProperties({ [filter.queryName]: e.target.value })
           }
           className="filters__select"
-          key={filter.queryName}
+          key={uuidv4()}
         >
           <option selected disabled hidden className="filters__option">
             {filter.placeholder}
           </option>
-          {filter.items.map((item) => (
-            <option value={item.value} className="filters__option">
+          {filter.items.map((item, index) => (
+            <option
+              key={uuidv4()}
+              value={item.value}
+              className="filters__option"
+            >
               {item.name}
             </option>
           ))}

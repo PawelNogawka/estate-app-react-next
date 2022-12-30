@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 
 import SliderItem from "./SliderItem";
+
+import { v4 as uuidv4 } from "uuid";
+
 const Slider = ({ photos }) => {
   const [scroll, setScroll] = useState(false);
   const [cursor, setCursor] = useState("grab");
@@ -53,8 +56,8 @@ const Slider = ({ photos }) => {
           onMouseLeave={handleOnMounseLeave}
           onMouseMove={handleOnMouseMove}
         >
-          {photos.map((photo,index) => (
-            <SliderItem  src={photo.url} title={photo.title} key={index} />
+          {photos.map((photo) => (
+            <SliderItem  src={photo.url} title={photo.title} key={uuidv4()}  />
           ))}
         </div>
       </div>
